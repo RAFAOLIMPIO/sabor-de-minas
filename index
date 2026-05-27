@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabor de Minas – Nova Direção</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --verde:    #2d5a27;
+      --verde-claro: #4a8a3f;
+      --amarelo:  #e8a020;
+      --creme:    #faf6ee;
+      --terracota:#b84b1e;
+      --marrom:   #3d2008;
+      --texto:    #2a1a06;
+      --muted:    #6b5740;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--creme);
+      color: var(--texto);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(45, 90, 39, 0.97);
+      backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem;
+      height: 60px;
+    }
+    .logo-nav {
+      font-family: 'Playfair Display', serif;
+      color: var(--amarelo);
+      font-size: 1.3rem;
+      letter-spacing: 0.04em;
+    }
+    nav ul {
+      list-style: none;
+      display: flex; gap: 2rem;
+    }
+    nav a {
+      color: #f5ecd5;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    nav a:hover { color: var(--amarelo); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 60px;
+    }
+
+    .hero-texto {
+      background: var(--verde);
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 4rem;
+    }
+    .tag-nova-direcao {
+      display: inline-block;
+      background: var(--amarelo);
+      color: var(--marrom);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-texto h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+    .hero-texto h1 span { color: var(--amarelo); }
+    .hero-texto p {
+      color: #c8e8c0;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 420px;
+      margin-bottom: 2rem;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--amarelo);
+      color: var(--marrom);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+    }
+    .hero-cta:hover { background: #f5b535; transform: translateY(-2px); }
+
+    .hero-foto {
+      /* SUBSTITUA a URL abaixo pela foto real do restaurante */
+      background: url('fotos/hero.jpg') center/cover no-repeat;
+      background-color: #2a4020;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-foto::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(45,90,39,0.4) 0%, transparent 60%);
+    }
+    /* Placeholder quando não há foto */
+    .foto-placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: #3a5c30;
+      gap: 12px;
+    }
+    .foto-placeholder svg { opacity: .4; }
+    .foto-placeholder span {
+      color: rgba(255,255,255,0.5);
+      font-size: .85rem;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    /* ─── SEÇÃO: NOVA DIREÇÃO ─── */
+    #nova-direcao {
+      background: var(--amarelo);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    #nova-direcao h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: var(--marrom);
+      margin-bottom: 1rem;
+    }
+    #nova-direcao p {
+      color: var(--marrom);
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.8;
+    }
+    .icones-diferenciais {
+      display: flex; justify-content: center; gap: 3rem;
+      flex-wrap: wrap; margin-top: 2.5rem;
+    }
+    .diferencial {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .diferencial .icone {
+      width: 56px; height: 56px;
+      background: var(--verde);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .diferencial span {
+      font-weight: 700;
+      color: var(--marrom);
+      font-size: .9rem;
+    }
+
+    /* ─── SEÇÃO: CARDÁPIO ─── */
+    #cardapio {
+      padding: 5rem 2rem;
+      background: var(--creme);
+    }
+    .secao-titulo {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .secao-titulo h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: var(--verde);
+    }
+    .secao-titulo p { color: var(--muted); margin-top: .5rem; font-size: 1rem; }
+
+    .cardapio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .card-prato {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      transition: transform .2s;
+    }
+    .card-prato:hover { transform: translateY(-4px); }
+    .card-foto {
+      height: 200px;
+      /* Substitua pela foto real: background-image: url('fotos/prato1.jpg') */
+      background: #c8e8c0 url('fotos/prato1.jpg') center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .card-foto.p2 { background-color: #e8d0b0; background-image: url('fotos/prato2.jpg'); }
+    .card-foto.p3 { background-color: #d0c8e0; background-image: url('fotos/prato3.jpg'); }
+    .card-foto.p4 { background-color: #f0d8c0; background-image: url('fotos/prato4.jpg'); }
+    .foto-label {
+      background: rgba(0,0,0,0.35);
+      color: #fff;
+      font-size: .75rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .card-corpo { padding: 1.2rem; }
+    .card-corpo h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--verde);
+      margin-bottom: .3rem;
+    }
+    .card-corpo p { font-size: .9rem; color: var(--muted); line-height: 1.6; }
+    .card-preco {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 1rem;
+      padding-top: .8rem;
+      border-top: 1px solid #eee;
+    }
+    .preco {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--terracota);
+      font-weight: 700;
+    }
+    .preco-obs { font-size: .75rem; color: var(--muted); }
+    .badge-dia {
+      background: var(--amarelo);
+      color: var(--marrom);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* ─── SELF SERVICE ─── */
+    #self-service {
+      background: var(--verde);
+      padding: 5rem 2rem;
+      color: #fff;
+    }
+    #self-service h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: .5rem;
+      color: var(--amarelo);
+    }
+    #self-service > p {
+      text-align: center;
+      color: #c8e8c0;
+      margin-bottom: 3rem;
+      font-size: 1rem;
+    }
+    .fotos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .foto-box {
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      /* Substitua pelas fotos reais */
+      background-color: #3a5c30;
+      background-image: url('fotos/selfservice1.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex; align-items: flex-end;
+    }
+    .foto-box.s2 { background-image: url('fotos/selfservice2.jpg'); }
+    .foto-box.s3 { background-image: url('fotos/selfservice3.jpg'); }
+    .foto-box.s4 { background-image: url('fotos/selfservice4.jpg'); }
+    .foto-legenda {
+      background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+      color: #fff;
+      width: 100%;
+      padding: 1rem .8rem .6rem;
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    /* ─── PREÇOS ─── */
+    #precos {
+      padding: 5rem 2rem;
+      background: #fff;
+    }
+    .precos-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .tabela-precos {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+    .tabela-precos th {
+      background: var(--verde);
+      color: #fff;
+      font-size: .85rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 12px 16px;
+      text-align: left;
+    }
+    .tabela-precos td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #eee;
+      font-size: .95rem;
+    }
+    .tabela-precos tr:nth-child(even) td { background: var(--creme); }
+    .tabela-precos .valor {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--terracota);
+      font-weight: 700;
+    }
+    .obs-preco {
+      text-align: center;
+      color: var(--muted);
+      font-size: .85rem;
+      margin-top: 1rem;
+    }
+
+    /* ─── HORÁRIOS ─── */
+    #horarios {
+      background: var(--creme);
+      padding: 5rem 2rem;
+    }
+    .horarios-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .horario-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px dashed #c8b89a;
+    }
+    .horario-row:last-child { border-bottom: none; }
+    .dia { font-weight: 700; color: var(--verde); font-size: 1rem; }
+    .hora { color: var(--muted); font-size: 1rem; }
+    .fechado { color: var(--terracota); font-weight: 700; font-size: .9rem; }
+    .aviso-horario {
+      background: var(--amarelo);
+      color: var(--marrom);
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      font-size: .9rem;
+      margin-top: 2rem;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    /* ─── CONTATO / LOCALIZAÇÃO ─── */
+    #contato {
+      background: var(--marrom);
+      padding: 5rem 2rem;
+      color: #f5ecd5;
+    }
+    #contato h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      text-align: center;
+      color: var(--amarelo);
+      margin-bottom: 3rem;
+    }
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .contato-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--amarelo);
+      margin-bottom: 1rem;
+    }
+    .contato-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      margin-bottom: 1.2rem;
+    }
+    .contato-item svg { flex-shrink: 0; margin-top: 2px; }
+    .contato-item p { font-size: .95rem; line-height: 1.6; color: #e8d8c0; }
+    .contato-item a { color: var(--amarelo); text-decoration: none; }
+    .contato-item a:hover { text-decoration: underline; }
+
+    .mapa-placeholder {
+      border-radius: 8px;
+      overflow: hidden;
+      height: 280px;
+      background: #5c3a18;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 12px;
+    }
+    .mapa-placeholder p {
+      color: rgba(255,255,255,.5);
+      font-size: .85rem;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .btn-instagram {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: #fff;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: .95rem;
+      margin-top: 1rem;
+      transition: opacity .2s;
+    }
+    .btn-instagram:hover { opacity: .85; }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25d366;
+      color: #fff;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: .95rem;
+      margin-top: .6rem;
+      transition: opacity .2s;
+    }
+    .btn-whatsapp:hover { opacity: .85; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #1e0f02;
+      text-align: center;
+      padding: 1.5rem;
+      color: rgba(255,255,255,0.3);
+      font-size: .8rem;
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      #hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-foto { min-height: 280px; }
+      .hero-texto { padding: 3rem 1.5rem; }
+      .contato-grid { grid-template-columns: 1fr; }
+      nav ul { gap: 1rem; }
+      nav a { font-size: .75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ──── NAVBAR ──── -->
+<nav>
+  <div class="logo-nav">Sabor de Minas</div>
+  <ul>
+    <li><a href="#cardapio">Cardápio</a></li>
+    <li><a href="#precos">Preços</a></li>
+    <li><a href="#horarios">Horários</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- ──── HERO ──── -->
+<section id="hero">
+  <div class="hero-texto">
+    <div class="tag-nova-direcao">✦ Sob Nova Direção ✦</div>
+    <h1>Sabor de <span>Minas</span></h1>
+    <p>
+      Comida caseira mineira de verdade, feita com carinho e ingredientes frescos todo dia.
+      A marmitaria que você conhecia chegou de volta — desta vez, do jeito certo.
+    </p>
+    <a href="#cardapio" class="hero-cta">Ver o cardápio de hoje →</a>
+  </div>
+  <div class="hero-foto">
+    <!-- Coloque a foto principal do restaurante na pasta fotos/ com o nome hero.jpg -->
+    <div class="foto-placeholder">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+        <rect x="8" y="16" width="48" height="36" rx="4" stroke="white" stroke-width="2"/>
+        <circle cx="32" cy="34" r="10" stroke="white" stroke-width="2"/>
+        <circle cx="32" cy="34" r="4" fill="white" opacity=".4"/>
+        <rect x="22" y="10" width="20" height="8" rx="2" stroke="white" stroke-width="2"/>
+      </svg>
+      <span>Adicione a foto principal aqui<br/><code>fotos/hero.jpg</code></span>
+    </div>
+  </div>
+</section>
+
+<!-- ──── NOVA DIREÇÃO ──── -->
+<section id="nova-direcao">
+  <h2>Uma nova história começa aqui</h2>
+  <p>
+    O Sabor de Minas passou por uma grande mudança. Com nova gestão, a marmitaria voltou
+    com o compromisso que toda boa cozinha mineira merece: respeito pelo cliente, ingredientes
+    de qualidade e aquele sabor de comer em casa.
+  </p>
+  <p>
+    Não é só uma mudança de dono — é uma mudança de atitude.
+  </p>
+  <div class="icones-diferenciais">
+    <div class="diferencial">
+      <div class="icone">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c8e8c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <span>Ingredientes frescos</span>
+    </div>
+    <div class="diferencial">
+      <div class="icone">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c8e8c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <span>Horários cumpridos</span>
+    </div>
+    <div class="diferencial">
+      <div class="icone">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c8e8c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </div>
+      <span>Atendimento com cuidado</span>
+    </div>
+    <div class="diferencial">
+      <div class="icone">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c8e8c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+      </div>
+      <span>Preço justo</span>
+    </div>
+  </div>
+</section>
+
+<!-- ──── CARDÁPIO ──── -->
+<section id="cardapio">
+  <div class="secao-titulo">
+    <h2>Cardápio</h2>
+    <p>Pratos do dia e opções que variam toda semana</p>
+  </div>
+  <div class="cardapio-grid">
+
+    <!-- Prato 1 -->
+    <div class="card-prato">
+      <div class="card-foto">
+        <!-- Substitua por: style="background-image:url('fotos/prato1.jpg')" -->
+        <span class="foto-label">📸 fotos/prato1.jpg</span>
+      </div>
+      <div class="card-corpo">
+        <h3>Frango à Mineira</h3>
+        <p>Frango caipira cozido com quiabo, milho verde e tempero da vó. Acompanha arroz, feijão tropeiro e farofa.</p>
+        <div class="card-preco">
+          <div>
+            <div class="preco"><!-- R$ 00,00 --></div>
+            <div class="preco-obs">marmita / prato</div>
+          </div>
+          <span class="badge-dia">Prato do dia</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prato 2 -->
+    <div class="card-prato">
+      <div class="card-foto p2">
+        <span class="foto-label">📸 fotos/prato2.jpg</span>
+      </div>
+      <div class="card-corpo">
+        <h3>Costelinha com Mandioca</h3>
+        <p>Costelinha de porco assada lentamente com mandioca cozida e molho de alho. Purê de batata e salada.</p>
+        <div class="card-preco">
+          <div>
+            <div class="preco"><!-- R$ 00,00 --></div>
+            <div class="preco-obs">marmita / prato</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prato 3 -->
+    <div class="card-prato">
+      <div class="card-foto p3">
+        <span class="foto-label">📸 fotos/prato3.jpg</span>
+      </div>
+      <div class="card-corpo">
+        <h3>Tutu de Feijão</h3>
+        <p>Clássico mineiro — feijão engrossado com farinha de mandioca, linguiça frita, couve refogada e ovo caipira.</p>
+        <div class="card-preco">
+          <div>
+            <div class="preco"><!-- R$ 00,00 --></div>
+            <div class="preco-obs">marmita / prato</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prato 4 -->
+    <div class="card-prato">
+      <div class="card-foto p4">
+        <span class="foto-label">📸 fotos/prato4.jpg</span>
+      </div>
+      <div class="card-corpo">
+        <h3>Bife à Rolê</h3>
+        <p>Bife recheado com cenoura, linguiça e ovo, cozido no molho de tomate com alho e cebola. Arroz e feijão.</p>
+        <div class="card-preco">
+          <div>
+            <div class="preco"><!-- R$ 00,00 --></div>
+            <div class="preco-obs">marmita / prato</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ──── SELF SERVICE ──── -->
+<section id="self-service">
+  <h2>Self Service</h2>
+  <p>Monte seu prato à vontade — opções quentes, saladas e muito mais</p>
+  <div class="fotos-grid">
+    <!-- Substitua os backgrounds pelos arquivos reais -->
+    <div class="foto-box" style="background-color:#4a6e40;">
+      <div class="foto-legenda">📸 fotos/selfservice1.jpg</div>
+    </div>
+    <div class="foto-box s2" style="background-color:#5c4a30;">
+      <div class="foto-legenda">📸 fotos/selfservice2.jpg</div>
+    </div>
+    <div class="foto-box s3" style="background-color:#3a5230;">
+      <div class="foto-legenda">📸 fotos/selfservice3.jpg</div>
+    </div>
+    <div class="foto-box s4" style="background-color:#6e5040;">
+      <div class="foto-legenda">📸 fotos/selfservice4.jpg</div>
+    </div>
+  </div>
+</section>
+
+<!-- ──── PREÇOS ──── -->
+<section id="precos">
+  <div class="secao-titulo">
+    <h2>Tabela de Preços</h2>
+    <p>Preço justo, porção generosa</p>
+  </div>
+  <div class="precos-container">
+    <table class="tabela-precos">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Descrição</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Self Service</strong></td>
+          <td>Por kg — monte seu prato à vontade</td>
+          <td class="valor">R$ 00,00/kg</td>
+        </tr>
+        <tr>
+          <td><strong>Prato Feito (PF)</strong></td>
+          <td>Arroz, feijão, proteína e acompanhamento</td>
+          <td class="valor">R$ 00,00</td>
+        </tr>
+        <tr>
+          <td><strong>Marmita P</strong></td>
+          <td>1 proteína + arroz + feijão + 1 acomp.</td>
+          <td class="valor">R$ 00,00</td>
+        </tr>
+        <tr>
+          <td><strong>Marmita G</strong></td>
+          <td>2 proteínas + arroz + feijão + 2 acomp.</td>
+          <td class="valor">R$ 00,00</td>
+        </tr>
+        <tr>
+          <td><strong>Refrigerante lata</strong></td>
+          <td>350ml</td>
+          <td class="valor">R$ 0,00</td>
+        </tr>
+        <tr>
+          <td><strong>Suco natural</strong></td>
+          <td>Copo 300ml</td>
+          <td class="valor">R$ 0,00</td>
+        </tr>
+        <tr>
+          <td><strong>Sobremesa do dia</strong></td>
+          <td>Pergunte no balcão 😉</td>
+          <td class="valor">R$ 0,00</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="obs-preco">* Preços podem ser atualizados. Consulte no estabelecimento.</p>
+  </div>
+</section>
+
+<!-- ──── HORÁRIOS ──── -->
+<section id="horarios">
+  <div class="secao-titulo">
+    <h2>Horário de Funcionamento</h2>
+    <p>Venha almoçar com a gente!</p>
+  </div>
+  <div class="horarios-container">
+    <div class="horario-row">
+      <span class="dia">Segunda-feira</span>
+      <span class="hora">11h00 às 14h30</span>
+    </div>
+    <div class="horario-row">
+      <span class="dia">Terça-feira</span>
+      <span class="hora">11h00 às 14h30</span>
+    </div>
+    <div class="horario-row">
+      <span class="dia">Quarta-feira</span>
+      <span class="hora">11h00 às 14h30</span>
+    </div>
+    <div class="horario-row">
+      <span class="dia">Quinta-feira</span>
+      <span class="hora">11h00 às 14h30</span>
+    </div>
+    <div class="horario-row">
+      <span class="dia">Sexta-feira</span>
+      <span class="hora">11h00 às 14h30</span>
+    </div>
+    <div class="horario-row">
+      <span class="dia">Sábado</span>
+      <span class="hora">11h00 às 14h00</span>
+    </div>
+    <div class="horario-row">
+      <span class="dia">Domingo</span>
+      <span class="fechado">Fechado</span>
+    </div>
+    <div class="aviso-horario">
+      📍 Aceitamos pedidos pelo WhatsApp também! Marmitas para retirar.
+    </div>
+  </div>
+</section>
+
+<!-- ──── CONTATO ──── -->
+<section id="contato">
+  <h2>Fale com a gente</h2>
+  <div class="contato-grid">
+    <div class="contato-info">
+      <h3>Informações</h3>
+      <div class="contato-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--amarelo)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        <p>
+          <!-- Substitua pelo endereço real -->
+          Rua [Nome da Rua], nº 000<br/>
+          [Bairro], [Cidade] – [Estado]<br/>
+          <em style="font-size:.82rem;color:#c8b898">Ao lado da oficina do [Nome do amigo]</em>
+        </p>
+      </div>
+      <div class="contato-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--amarelo)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <p>
+          <!-- Substitua pelo número real -->
+          <a href="https://wa.me/5511900000000">(11) 9 0000-0000</a>
+        </p>
+      </div>
+      <div class="contato-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--amarelo)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+        <p>
+          <!-- Substitua pelo @ real do Instagram -->
+          <a href="https://instagram.com/sabordeminasoficial" target="_blank">@sabordeminasoficial</a>
+        </p>
+      </div>
+      <a href="https://wa.me/5511900000000?text=Olá! Vi o site e quero saber mais sobre as marmitas 😊" class="btn-whatsapp" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.122 1.528 5.858L.058 23.5a.5.5 0 0 0 .613.613l5.7-1.493A11.937 11.937 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.671-.505-5.21-1.385l-.374-.22-3.85 1.009 1.026-3.755-.24-.386A9.964 9.964 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Pedir pelo WhatsApp
+      </a>
+      <br/>
+      <a href="https://instagram.com/sabordeminasoficial" class="btn-instagram" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Ver no Instagram
+      </a>
+    </div>
+    <div>
+      <div class="mapa-placeholder">
+        <!--
+          Para adicionar o mapa real:
+          1. Vá em google.com/maps
+          2. Busque o endereço
+          3. Clique em "Compartilhar" → "Incorporar um mapa"
+          4. Cole o código <iframe> aqui no lugar deste bloco
+        -->
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        <p>Cole aqui o iframe do Google Maps<br/>com o endereço da marmitaria</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──── FOOTER ──── -->
+<footer>
+  <p>© 2024 Sabor de Minas – Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
