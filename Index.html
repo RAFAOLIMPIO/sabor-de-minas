@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <title>Sabor de Minas | Marmitaria sob nova direção — Itatiba/SP</title>
+
+  <meta name="description" content="Sabor de Minas: marmitaria sob nova direção em Itatiba/SP. Comida caseira mineira, self-service, prato feito, marmitas e atendimento pelo WhatsApp." />
+  <meta name="keywords" content="Sabor de Minas, marmitaria Itatiba, comida caseira, marmita, self-service, prato feito, almoço, comida mineira, Parque São Francisco, Itatiba SP" />
+  <meta name="author" content="Sabor de Minas" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sabor de Minas | Marmitaria sob nova direção" />
+  <meta property="og:description" content="Comida caseira mineira, marmitas, prato feito e self-service em Itatiba/SP. Agora sob nova direção." />
+  <meta property="og:image" content="img/hero.jpeg" />
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sabor de Minas | Marmitaria Itatiba/SP" />
+  <meta name="twitter:description" content="Comida caseira mineira, marmitas e self-service. Sob nova direção." />
+
+  <!-- Favicon inline SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍛</text></svg>" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar" role="banner">
+    <p>🍛 Comida caseira • Marmitas • Self-service • <strong>Agora sob nova direção</strong></p>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
+    <a href="#hero" class="logo-nav" aria-label="Sabor de Minas - Início">
+      <span>Sabor</span> de Minas
+    </a>
+
+    <button class="menu-hamburger" id="menu-hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul id="nav-links" role="menubar">
+      <li role="none"><a href="#nova-direcao" role="menuitem">Nova direção</a></li>
+      <li role="none"><a href="#cardapio" role="menuitem">Pratos</a></li>
+      <li role="none"><a href="#self-service" role="menuitem">Self-service</a></li>
+      <li role="none"><a href="#horarios" role="menuitem">Horários</a></li>
+      <li role="none"><a href="#avaliacoes" role="menuitem">Avaliações</a></li>
+      <li role="none"><a href="#contato" class="nav-cta" role="menuitem">Pedir agora</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header id="hero" aria-label="Apresentação">
+    <div class="hero-esquerda">
+      <div class="badge-direcao" aria-label="Novidade">✨ Sob nova direção</div>
+
+      <h1>
+        Comida caseira<br />
+        com sabor de <em>Minas</em>
+      </h1>
+
+      <p>
+        A Sabor de Minas está de cara nova. Almoço feito com carinho,
+        tempero caseiro, porção honesta e aquele atendimento que faz você
+        querer voltar.
+      </p>
+
+      <div class="hero-botoes">
+        <a href="#cardapio" class="btn-primario">Ver pratos de hoje</a>
+        <a href="https://wa.me/5511998022970?text=Olá! Vi o site da Sabor de Minas e quero fazer um pedido."
+           target="_blank" rel="noopener noreferrer" class="btn-secundario">
+          Pedir pelo WhatsApp
+        </a>
+      </div>
+
+      <div class="hero-info" aria-label="Destaques">
+        <div class="hero-info-item">
+          <strong>PF</strong>
+          <span>Prato feito no capricho</span>
+        </div>
+        <div class="hero-info-item">
+          <strong>Self</strong>
+          <span>Comida fresca todos os dias</span>
+        </div>
+        <div class="hero-info-item">
+          <strong>WhatsApp</strong>
+          <span>Peça para retirar</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-direita" aria-hidden="true">
+      <img src="img/hero.jpeg" alt="Self-service da Sabor de Minas" loading="eager" />
+
+      <div class="hero-card-flutuante">
+        <span>🔥 Prato do dia</span>
+        <strong>Comida feita na hora</strong>
+        <p>Consulte o cardápio pelo WhatsApp.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- NOVA DIREÇÃO -->
+  <section id="nova-direcao" aria-labelledby="nd-titulo">
+    <div class="container nd-inner">
+      <div class="nd-texto">
+        <span class="secao-label">Recomeço</span>
+        <h2 id="nd-titulo">Uma nova fase para a Sabor de Minas</h2>
+
+        <p>
+          A Sabor de Minas está sob nova direção, com uma proposta simples:
+          servir comida boa, fresca e bem feita, com respeito por cada cliente.
+        </p>
+
+        <p>
+          O restaurante continua com aquele estilo caseiro, mas agora com
+          mais cuidado no preparo, melhor organização e atenção em cada detalhe.
+          É uma nova história começando no prato de todo dia.
+        </p>
+
+        <a href="#contato" class="btn-texto">Conheça e faça seu pedido →</a>
+      </div>
+
+      <div class="nd-diferenciais">
+        <div class="nd-item">
+          <div class="nd-icon" aria-hidden="true">🥘</div>
+          <div>
+            <strong>Comida de verdade</strong>
+            <span>Arroz, feijão, mistura, salada e aquele tempero caseiro.</span>
+          </div>
+        </div>
+
+        <div class="nd-item">
+          <div class="nd-icon" aria-hidden="true">🕒</div>
+          <div>
+            <strong>Almoço no horário</strong>
+            <span>Praticidade para quem trabalha e precisa comer bem.</span>
+          </div>
+        </div>
+
+        <div class="nd-item">
+          <div class="nd-icon" aria-hidden="true">❤️</div>
+          <div>
+            <strong>Atendimento melhor</strong>
+            <span>Nova administração, mais cuidado e respeito com o cliente.</span>
+          </div>
+        </div>
+
+        <div class="nd-item">
+          <div class="nd-icon" aria-hidden="true">💬</div>
+          <div>
+            <strong>Pedido pelo WhatsApp</strong>
+            <span>Consulte o prato do dia e peça sua marmita para retirar.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section id="beneficios" aria-labelledby="ben-titulo">
+    <div class="container">
+      <div class="secao-header">
+        <span class="secao-label">Por que escolher?</span>
+        <h2 id="ben-titulo">Almoço simples, bem feito e com carinho</h2>
+        <p>O básico bem feito é o que faz a diferença no dia a dia.</p>
+      </div>
+
+      <div class="beneficios-grid">
+        <div class="beneficio-card">
+          <span aria-hidden="true">🍽️</span>
+          <h3>Porção generosa</h3>
+          <p>Prato bem servido, com comida de verdade para matar a fome.</p>
+        </div>
+
+        <div class="beneficio-card">
+          <span aria-hidden="true">🌿</span>
+          <h3>Ingredientes frescos</h3>
+          <p>Preparo diário, comida com aparência bonita e sabor caseiro.</p>
+        </div>
+
+        <div class="beneficio-card">
+          <span aria-hidden="true">🔥</span>
+          <h3>Prato do dia</h3>
+          <p>Opções variadas durante a semana, sempre com aquele tempero mineiro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO (sem preços) -->
+  <section id="cardapio" aria-labelledby="card-titulo">
+    <div class="container">
+      <div class="secao-header">
+        <span class="secao-label">Cardápio</span>
+        <h2 id="card-titulo">Pratos em destaque</h2>
+        <p>Pratos feitos com ingredientes frescos e muito tempero caseiro.</p>
+      </div>
+
+      <div class="cardapio-grid">
+
+        <article class="card-prato">
+          <div class="card-foto-wrap">
+            <img src="img/prato1.png" alt="Bife acebolado com arroz, feijão, farofa e batata frita" loading="lazy" />
+            <span class="tag-card">Mais pedido</span>
+          </div>
+          <div class="card-corpo">
+            <h3>Bife acebolado</h3>
+            <p>Arroz branco, feijão, farofa caseira, batata frita e bife acebolado no capricho.</p>
+            <div class="card-rodape">
+              <div class="preco-placeholder">
+                <span class="consulte">💰 Consulte valor</span>
+              </div>
+              <a href="https://wa.me/5511998022970?text=Olá! Quero pedir o bife acebolado da Sabor de Minas."
+                 target="_blank" rel="noopener noreferrer" aria-label="Pedir bife acebolado pelo WhatsApp">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-prato">
+          <div class="card-foto-wrap">
+            <img src="img/prato2.png" alt="Marmita com carne, couve, farofa e arroz" loading="lazy" />
+            <span class="tag-card destaque">Destaque</span>
+          </div>
+          <div class="card-corpo">
+            <h3>Carne com couve</h3>
+            <p>Carne bem temperada, couve refogada, farofa e arroz fresquinho para o almoço.</p>
+            <div class="card-rodape">
+              <div class="preco-placeholder">
+                <span class="consulte">💰 Consulte valor</span>
+              </div>
+              <a href="https://wa.me/5511998022970?text=Olá! Quero pedir a carne com couve da Sabor de Minas."
+                 target="_blank" rel="noopener noreferrer" aria-label="Pedir carne com couve pelo WhatsApp">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-prato">
+          <div class="card-foto-wrap">
+            <img src="img/prato3.png" alt="Marmita com carne de panela, mandioca, arroz e farofa" loading="lazy" />
+            <span class="tag-card">Caseiro</span>
+          </div>
+          <div class="card-corpo">
+            <h3>Carne com mandioca</h3>
+            <p>Carne de panela com mandioca, arroz branco e farofa temperada.</p>
+            <div class="card-rodape">
+              <div class="preco-placeholder">
+                <span class="consulte">💰 Consulte valor</span>
+              </div>
+              <a href="https://wa.me/5511998022970?text=Olá! Quero pedir carne com mandioca da Sabor de Minas."
+                 target="_blank" rel="noopener noreferrer" aria-label="Pedir carne com mandioca pelo WhatsApp">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-prato">
+          <div class="card-foto-wrap">
+            <img src="img/prato4.png" alt="Frango à parmegiana com arroz, feijão, farofa e batata frita" loading="lazy" />
+            <span class="tag-card destaque">Especial</span>
+          </div>
+          <div class="card-corpo">
+            <h3>Frango à parmegiana</h3>
+            <p>Frango empanado com molho e queijo derretido, acompanhado de arroz, feijão, farofa e fritas.</p>
+            <div class="card-rodape">
+              <div class="preco-placeholder">
+                <span class="consulte">💰 Consulte valor</span>
+              </div>
+              <a href="https://wa.me/5511998022970?text=Olá! Quero pedir frango à parmegiana da Sabor de Minas."
+                 target="_blank" rel="noopener noreferrer" aria-label="Pedir frango à parmegiana pelo WhatsApp">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="cardapio-cta">
+        <p>Cardápio varia conforme o dia. Consulte as opções de hoje:</p>
+        <a href="https://wa.me/5511998022970?text=Olá! Quero saber o cardápio de hoje da Sabor de Minas."
+           target="_blank" rel="noopener noreferrer" class="btn-primario">
+          Ver cardápio do dia no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELF-SERVICE -->
+  <section id="self-service" aria-labelledby="ss-titulo">
+    <div class="container">
+      <div class="secao-header claro">
+        <span class="secao-label">Self-service</span>
+        <h2 id="ss-titulo">Monte seu prato do seu jeito</h2>
+        <p>Opções quentes, saladas, acompanhamentos e aquele tempero de comida caseira.</p>
+      </div>
+
+      <div class="self-layout">
+        <div class="self-texto">
+          <h3>Almoço completo todos os dias</h3>
+          <p>
+            Ideal para quem quer variedade e comida fresca. Escolha suas opções,
+            monte seu prato e aproveite uma refeição simples, saborosa e bem servida.
+          </p>
+
+          <ul aria-label="O que está incluído">
+            <li>✅ Arroz e feijão fresquinhos</li>
+            <li>✅ Carnes e acompanhamentos do dia</li>
+            <li>✅ Saladas e opções caseiras</li>
+            <li>✅ Marmitas para retirada</li>
+          </ul>
+
+          <a href="https://wa.me/5511998022970?text=Olá! Quero consultar as opções de hoje da Sabor de Minas."
+             target="_blank" rel="noopener noreferrer" class="btn-primario">
+            Consultar opções de hoje
+          </a>
+        </div>
+
+        <div class="self-cards-grid">
+          <div class="self-card">
+            <div class="self-card-icon">🍚</div>
+            <strong>Arroz & Feijão</strong>
+            <p>Feitos frescos toda manhã, do jeito caseiro</p>
+          </div>
+          <div class="self-card">
+            <div class="self-card-icon">🥩</div>
+            <strong>Proteínas do dia</strong>
+            <p>Carnes, frango e opções variadas na semana</p>
+          </div>
+          <div class="self-card">
+            <div class="self-card-icon">🥗</div>
+            <strong>Saladas frescas</strong>
+            <p>Legumes e folhas para complementar seu prato</p>
+          </div>
+          <div class="self-card">
+            <div class="self-card-icon">🥘</div>
+            <strong>Acompanhamentos</strong>
+            <p>Farofa, macarrão, purê e muito mais</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORÁRIOS -->
+  <section id="horarios" aria-labelledby="hor-titulo">
+    <div class="container">
+      <div class="secao-header">
+        <span class="secao-label">Funcionamento</span>
+        <h2 id="hor-titulo">Horários de atendimento</h2>
+        <p>Venha almoçar com a gente ou peça sua marmita pelo WhatsApp.</p>
+      </div>
+
+      <div class="horarios-card">
+        <div class="horario-row">
+          <span>Segunda-feira</span>
+          <strong>11h00 às 14h30</strong>
+        </div>
+        <div class="horario-row">
+          <span>Terça-feira</span>
+          <strong>11h00 às 14h30</strong>
+        </div>
+        <div class="horario-row">
+          <span>Quarta-feira</span>
+          <strong>11h00 às 14h30</strong>
+        </div>
+        <div class="horario-row">
+          <span>Quinta-feira</span>
+          <strong>11h00 às 14h30</strong>
+        </div>
+        <div class="horario-row">
+          <span>Sexta-feira</span>
+          <strong>11h00 às 14h30</strong>
+        </div>
+        <div class="horario-row">
+          <span>Sábado</span>
+          <strong>11h00 às 14h00</strong>
+        </div>
+        <div class="horario-row fechado">
+          <span>Domingo</span>
+          <strong>Fechado</strong>
+        </div>
+
+        <div class="aviso-horario">
+          <strong>📌 Sob nova direção</strong>
+          <p>Almoço com mais qualidade, organização e respeito por você.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES (com depoimentos) -->
+  <section id="avaliacoes" aria-labelledby="av-titulo">
+    <div class="container">
+      <div class="secao-header">
+        <span class="secao-label">Depoimentos</span>
+        <h2 id="av-titulo">Quem já experimentou, aprova</h2>
+        <p>Veja o que nossos clientes estão dizendo sobre a nova fase da Sabor de Minas.</p>
+      </div>
+
+      <div class="depoimentos-grid">
+        <div class="depoimento-card">
+          <div class="depoimento-estrelas">★★★★★</div>
+          <p class="depoimento-texto">"Comida caseira de verdade! O bife acebolado é sensacional e o atendimento melhorou muito. Agora virou meu almoço de toda semana."</p>
+          <div class="depoimento-autor">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Foto de Marina" loading="lazy" />
+            <div>
+              <strong>Marina R.</strong>
+              <span>Cliente</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="depoimento-card">
+          <div class="depoimento-estrelas">★★★★★</div>
+          <p class="depoimento-texto">"Self-service variado e tudo muito fresquinho. O preço é justo e a localização é ótima. Recomendo demais!"</p>
+          <div class="depoimento-autor">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto de Carlos" loading="lazy" />
+            <div>
+              <strong>Carlos M.</strong>
+              <span>Almoça todo dia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="depoimento-card">
+          <div class="depoimento-estrelas">★★★★★</div>
+          <p class="depoimento-texto">"Peço marmita pelo WhatsApp e é muito prático. A comida chega quente e bem embalada. Parabéns pela nova gestão!"</p>
+          <div class="depoimento-autor">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Foto de Fernanda" loading="lazy" />
+            <div>
+              <strong>Fernanda L.</strong>
+              <span>Pedido por delivery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="avaliacao-central">
+        <div class="avaliacao-estrelas-grande">★★★★★</div>
+        <p class="avaliacao-chamada">Sua avaliação no Google ajuda muito a nova direção a crescer.</p>
+        <a href="https://www.google.com/search?q=sabor+de+minas+itatiba#lrd=0x94ced59cbb5d40e1:0xbd906706661b5be2,3,,,,"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-avaliar" aria-label="Avaliar Sabor de Minas no Google">
+          ⭐ Avaliar no Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM (com grid de posts) -->
+  <section id="instagram" aria-labelledby="insta-titulo">
+    <div class="container insta-inner">
+      <div class="insta-texto">
+        <span class="secao-label">Instagram</span>
+        <h2 id="insta-titulo">Acompanhe os pratos do dia</h2>
+        <p>
+          Postamos o cardápio diário, bastidores da cozinha e novidades da nova direção.
+          Siga e fique por dentro.
+        </p>
+        <a href="https://instagram.com/sabordeminas_itatiba" target="_blank" rel="noopener noreferrer"
+           class="btn-insta-grande">
+          📸 @sabordeminas_itatiba
+        </a>
+      </div>
+
+      <div class="insta-grid">
+        <div class="insta-post-placeholder">
+          <span>🍛</span>
+          <p>Prato do dia</p>
+        </div>
+        <div class="insta-post-placeholder">
+          <span>🥘</span>
+          <p>Self-service</p>
+        </div>
+        <div class="insta-post-placeholder">
+          <span>📦</span>
+          <p>Marmita especial</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" aria-labelledby="cont-titulo">
+    <div class="container">
+      <div class="secao-header claro">
+        <span class="secao-label">Contato</span>
+        <h2 id="cont-titulo">Faça seu pedido ou venha almoçar</h2>
+        <p>Estamos esperando você na Sabor de Minas.</p>
+      </div>
+
+      <div class="contato-grid">
+        <div class="contato-bloco">
+          <h3>Informações</h3>
+
+          <div class="contato-item">
+            <span aria-hidden="true">📍</span>
+            <address>
+              <strong>Avenida Nelson Leardine, nº 150</strong><br />
+              Parque São Francisco — Itatiba/SP<br />
+              <em>Referência: ao lado da oficina</em>
+            </address>
+          </div>
+
+          <div class="contato-item">
+            <span aria-hidden="true">📞</span>
+            <p>
+              <a href="https://wa.me/5511998022970" target="_blank" rel="noopener noreferrer">
+                (11) 99802-2970
+              </a>
+            </p>
+          </div>
+
+          <div class="contato-item">
+            <span aria-hidden="true">📷</span>
+            <p>
+              <a href="https://instagram.com/sabordeminas_itatiba" target="_blank" rel="noopener noreferrer">
+                @sabordeminas_itatiba
+              </a>
+            </p>
+          </div>
+
+          <div class="botoes-contato">
+            <a href="https://wa.me/5511998022970?text=Olá! Vi o site da Sabor de Minas e quero fazer um pedido."
+               class="btn-wpp" target="_blank" rel="noopener noreferrer">
+              📱 Pedir pelo WhatsApp
+            </a>
+
+            <a href="https://instagram.com/sabordeminas_itatiba"
+               class="btn-insta" target="_blank" rel="noopener noreferrer">
+              📸 Ver Instagram
+            </a>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Nelson+Leardine+150+Parque+Sao+Francisco+Itatiba+SP"
+               class="btn-mapa" target="_blank" rel="noopener noreferrer">
+              🗺️ Abrir no Google Maps
+            </a>
+
+            <a href="https://www.google.com/search?q=sabor+de+minas+itatiba#lrd=0x94ced59cbb5d40e1:0xbd906706661b5be2,3,,,,"
+               class="btn-avaliar-cont" target="_blank" rel="noopener noreferrer">
+              ⭐ Avaliar no Google
+            </a>
+          </div>
+        </div>
+
+        <div class="contato-bloco mapa-bloco">
+          <h3>Localização</h3>
+          <div class="mapa-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.2!2d-46.856!3d-23.001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAvenida+Nelson+Leardine%2C+150+-+Parque+S%C3%A3o+Francisco%2C+Itatiba+-+SP!5e0!3m2!1spt!2sbr!4v1"
+              width="100%"
+              height="100%"
+              style="border:0; border-radius: 20px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização da Sabor de Minas no Google Maps"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-inner container">
+      <div class="footer-marca">
+        <strong>Sabor de Minas</strong>
+        <p>Comida caseira mineira • Sob nova direção</p>
+        <div class="footer-links">
+          <a href="https://wa.me/5511998022970" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://instagram.com/sabordeminas_itatiba" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+
+      <div class="footer-endereco">
+        <p>Av. Nelson Leardine, 150</p>
+        <p>Parque São Francisco — Itatiba/SP</p>
+      </div>
+
+      <p class="footer-copy">
+        © <span id="anoAtual">2025</span> Sabor de Minas.<br />
+        Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5511998022970?text=Olá! Quero saber mais sobre as marmitas da Sabor de Minas."
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Falar no WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.527 5.845L.057 23.25l5.563-1.457A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.894 0-3.66-.516-5.176-1.414l-.37-.219-3.301.864.88-3.215-.24-.38A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+    </svg>
+    <span>Peça já</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
