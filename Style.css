@@ -1,0 +1,201 @@
+/* ========== NOVOS ESTILOS PARA AVALIAÇÕES E INSTAGRAM ========== */
+
+/* Depoimentos grid */
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.depoimento-card {
+  background: white;
+  border-radius: 28px;
+  padding: 32px 28px;
+  box-shadow: var(--sombra);
+  transition: transform var(--trans);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.depoimento-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-forte);
+}
+
+.depoimento-estrelas {
+  color: #fbbc04;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.depoimento-texto {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--texto-claro);
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.depoimento-autor {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.depoimento-autor img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--ouro);
+}
+
+.depoimento-autor strong {
+  display: block;
+  color: var(--verde);
+  font-size: 0.95rem;
+}
+
+.depoimento-autor span {
+  font-size: 0.8rem;
+  color: var(--texto-mais-claro);
+}
+
+.avaliacao-central {
+  text-align: center;
+  background: var(--bege-card);
+  border-radius: 32px;
+  padding: 48px 32px;
+  margin-top: 20px;
+}
+
+.avaliacao-estrelas-grande {
+  font-size: 2.6rem;
+  color: #fbbc04;
+  letter-spacing: 8px;
+  margin-bottom: 16px;
+}
+
+.avaliacao-chamada {
+  font-size: 1.05rem;
+  color: var(--texto-claro);
+  margin-bottom: 28px;
+}
+
+.btn-avaliar {
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  background: #fbbc04;
+  color: var(--marrom);
+  transition: transform var(--trans), background var(--trans);
+  display: inline-block;
+  font-size: 0.95rem;
+}
+
+.btn-avaliar:hover {
+  transform: translateY(-3px);
+  background: #ffcf40;
+}
+
+/* Instagram grid */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 320px;
+}
+
+.insta-post-placeholder {
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  transition: transform var(--trans);
+}
+
+.insta-post-placeholder:hover {
+  transform: scale(1.02);
+  background: rgba(255,255,255,0.2);
+}
+
+.insta-post-placeholder span {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.insta-post-placeholder p {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+}
+
+/* Ajuste para o cardápio sem preço */
+.preco-placeholder {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.consulte {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--verde);
+  background: rgba(29, 59, 36, 0.08);
+  padding: 6px 12px;
+  border-radius: 40px;
+  display: inline-block;
+}
+
+.card-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Responsivo para depoimentos */
+@media (max-width: 900px) {
+  .depoimentos-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .insta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .insta-grid {
+    max-width: 100%;
+    margin-top: 24px;
+  }
+
+  .insta-post-placeholder span {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .depoimento-card {
+    padding: 24px 20px;
+  }
+
+  .avaliacao-central {
+    padding: 32px 20px;
+  }
+
+  .avaliacao-estrelas-grande {
+    font-size: 2rem;
+    letter-spacing: 4px;
+  }
+}
